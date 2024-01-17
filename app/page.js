@@ -3,8 +3,13 @@ import TicketCards from "./(components)/TicketCards";
 
 const Dashboard = () => {
   return (
-    <div>
-      <TicketCards />
+    <div className="p-5">
+      <div className="lg:grid grid-cols-2 xl:grid-cols-4">
+        <TicketCards />
+        <TicketCards />
+        <TicketCards />
+        <TicketCards />
+      </div>
     </div>
   );
 };
