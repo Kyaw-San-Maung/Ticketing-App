@@ -1,7 +1,12 @@
 import React from "react";
+import TicketCards from "./(components)/TicketCards";
 
 const Dashboard = () => {
-  return <div>Dashboard page</div>;
+  return (
+    <div>
+      <TicketCards />
+    </div>
+  );
 };
 
 export default Dashboard;
