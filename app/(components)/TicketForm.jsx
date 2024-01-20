@@ -62,6 +62,7 @@ const TicketForm = () => {
         <textarea
           name="description"
           id="description"
+          typeof="text"
           onChange={handleChange}
           required={true}
           value={formData.description}
