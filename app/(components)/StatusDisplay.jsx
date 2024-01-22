@@ -22,7 +22,7 @@ const StatusDisplay = ({ status }) => {
         status
       )}`}
     >
-      {status}
+      <p className="text-s text-black">{status}</p>
     </span>
   );
 };
