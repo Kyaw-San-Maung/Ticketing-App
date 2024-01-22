@@ -4,20 +4,18 @@ import { PriorityDisplay } from "./PriorityDisplay";
 import ProgressDisplay from "./ProgressDisplay";
 import StatusDisplay from "./StatusDisplay";
 
-const TicketCards = () => {
+const TicketCards = ({ ticket }) => {
   return (
     <div className="flex flex-col bg-card hover:bg-card-hover rounded-md shadow-lg p-3 m-2">
       <div className="flex mb-3 ">
-        <PriorityDisplay />
+        <PriorityDisplay priority={ticket.priority} />
         <div className="ml-auto">
           <DeleteBlocks />
         </div>
       </div>
-      <h4>Ticket Tiltle</h4>
+      <h4>{ticket.title}</h4>
       <hr className="h-px border-0 bg-page mb-2" />
-      <p className="whitespace-pre-wrap">
-        this is ticket description! please do this ticket
-      </p>
+      <p className="whitespace-pre-wrap">{ticket.description}</p>
       <div className="flex-grow"></div>
       <div className="flex mt-2">
         <div className="flex flex-col">
