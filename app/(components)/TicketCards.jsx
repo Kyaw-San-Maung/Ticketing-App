@@ -25,7 +25,7 @@ const TicketCards = ({ ticket }) => {
       <div className="flex mb-3 ">
         <PriorityDisplay priority={ticket.priority} />
         <div className="ml-auto">
-          <DeleteBlocks />
+          <DeleteBlocks id={ticket._id} />
         </div>
       </div>
       <h4>{ticket.title}</h4>
