@@ -1,6 +1,11 @@
 import React from "react";
 import TicketCards from "./(components)/TicketCards";
 
+const getTickets = async () => {
+  try {
+  } catch (error) {}
+};
+
 const Dashboard = () => {
   return (
     <div className="p-5">
