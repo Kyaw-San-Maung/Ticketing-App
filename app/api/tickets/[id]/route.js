@@ -1,6 +1,7 @@
 import Ticket from "@/app/(models)/Ticket";
 import { NextResponse } from "next/server";
 
+//For Getting data from our data
 export async function GET(req, { params }) {
   try {
     const { id } = params;
@@ -13,6 +14,7 @@ export async function GET(req, { params }) {
   }
 }
 
+//For Deleting Data function
 export async function DELETE(req, { params }) {
   try {
     const { id } = params;
@@ -24,6 +26,25 @@ export async function DELETE(req, { params }) {
   } catch (error) {
     return NextResponse.json(
       { message: "Failed to delete the ticket.", error },
+      { status: 500 }
+    );
+  }
+}
+
+//For updating Datat Function
+export async function PUT(req, { params }) {
+  try {
+    const { id } = params;
+    const body = await req.json();
+    const ticketData = body.formData;
+
+    const updateTicketData = await Ticket.findByIdAndUpdate(id, {
+      ...ticketData,
+    });
+    return NextResponse.json({ message: "Ticket updated." }, { status: 200 });
+  } catch (error) {
+    return NextResponse.json(
+      { message: "Failed to update the ticket.", error },
       { status: 500 }
     );
   }
